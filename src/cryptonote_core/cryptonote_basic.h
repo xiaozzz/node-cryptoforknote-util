@@ -525,6 +525,7 @@ namespace cryptonote
     crypto::cycle cycle;
     crypto::cycle40 cycle40;
     crypto::cycle48 cycle48;
+    crypto::signature signature;
 
     BEGIN_SERIALIZE()
       VARINT_FIELD(major_version)
@@ -546,6 +547,7 @@ namespace cryptonote
       if (blob_type == BLOB_TYPE_CRYPTONOTE_TUBE) FIELD(cycle40)
       if (blob_type == BLOB_TYPE_CRYPTONOTE_XTA) FIELD(cycle48)
       if (blob_type == BLOB_TYPE_CRYPTONOTE_XHV) FIELD(pricing_record)
+      if (blob_type == BLOB_TYPE_WOW) FIELD(signature)
 
     END_SERIALIZE()
   };
